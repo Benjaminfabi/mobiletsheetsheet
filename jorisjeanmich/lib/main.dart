@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:jorisjeanmich/pageseconde.dart';
 
 void main() {
   runApp(MyApp());
@@ -52,7 +53,7 @@ class _PortaitPaysageState extends State<PortaitPaysage> {
                   padding: const EdgeInsets.all(10.0),
                   child: Icon(Icons.local_fire_department_rounded, size: 25),
                 ),
-                TextButton(onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp())); },
+                TextButton(onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context) => PageSeconde())); },
                     child: Text("page2")),
               ],
             ),
@@ -76,7 +77,12 @@ class _PortaitPaysageState extends State<PortaitPaysage> {
   Widget _buildNormalContainer() {
     return Center(child: Column(
       children: [
-        Expanded( child: Container(color: Colors.amberAccent, child: Row( mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.start, children: [TextButton(onPressed: (){}, child: Text("poggersNormal", style: TextStyle(color: Colors.white),), style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)))],))),
+        Expanded( child: Container(color: Colors.amberAccent, child: Column(
+          children: [
+            Row( mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.start, children: [TextButton(onPressed: (){}, child: Text("poggersNormal", style: TextStyle(color: Colors.white),), style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.blue)))],),
+
+          ],
+        ))),
         Expanded( child: Container(color: Colors.blue, child: Row(children: [TextButton(onPressed: (){}, child: Text("bas"))],))),
       ],
     ));
